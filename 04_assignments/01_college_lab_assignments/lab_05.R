@@ -3,25 +3,19 @@
 # WAP to get the grade of student based on marks obtained.
 
 get_grade <- function(marks) {
-  if(marks<=100 & marks>=90){
-    return("A");
-  }
-  else if(marks<90 & marks >=80){
+  if (marks <= 100 && marks >= 90) {
+    return("A") ; # nolint: semicolon_linter.
+  }else if (marks < 90 && marks >= 80) {
     return("B");
-  }
-  else if(marks<80 & marks >= 70){
+  }else if (marks < 80 && marks >= 70) {
     return("C");
-  }
-  else if(marks<70 & marks >= 60){
+  }else if (marks < 70 && marks >= 60) {
     return("D");
-  }
-  else if(marks<60 & marks >= 50){
+  }else if (marks < 60 && marks >= 50) {
     return("E");
-  }
-  else if(marks<50 & marks >= 0){
-    return("F"); 
-  }
-  else{
+  }else if (marks < 50 && marks >= 0) {
+    return("F");
+  }else {
     return("Invalid Marks");
   }
 }
@@ -42,11 +36,10 @@ get_grade("A")
 
 # WAP to find out if a particular year is a leap year or not.
 
-is_leap_year <- function(year){
-  if(year%%4 == 0 & year%%100!=0 | year%%400 == 0){
+is_leap_year <- function(year) {
+  if (year %% 4 == 0 && year %% 100 != 0 || year %% 400 == 0) {
     return("Its a leap year!");
-  }
-  else{
+  }else {
     return("Not a leap year");
   }
 }
@@ -55,20 +48,20 @@ is_leap_year(2000)
 is_leap_year(3000)
 is_leap_year(3024)
 is_leap_year(2024)
-# is_leap_year("A")  Optimize: Add something like try-catch to avoid the error message.
+# is_leap_year("A")
+# Optimize: Add something like try-catch to avoid the error message.
 
 
 # Exercise 3 ----
 
-# Take a vector of years and identify if each one of them is a leap year or not. 
+# Take a vector of years and identify if each one of them is a leap year or not.
 
-is_leap_year_vector <- function(years){ 
+is_leap_year_vector <- function(years) {
   result <- c();
-  for(year in years){
-    if(year %% 4 == 0 & year %% 100 == 0 | year %% 400 == 0){
-      result <- c(result, "Leap year") 
-    }
-    else{
+  for (year in years) {
+    if (year %% 4 == 0 && year %% 100 == 0 || year %% 400 == 0) {
+      result <- c(result, "Leap year")
+    }else {
       result <- c(result, "Not a leap year")
     }
   }
@@ -81,7 +74,7 @@ is_leap_year_vector(c(2000, 3000, 3024, 2024))
 
 # Exercise 4 ----
 
-# WAP to take two numbers and an operator as an input and perform basic arithmetic operations.
+# Take two numbers and operator as input and perform basic arithmetic operations
 
 simple_calculator <- function(num1, num2, operator){
   if(operator== "+"){
@@ -117,18 +110,16 @@ simple_calculator(10,0, "/")
 
 # Exercise 5 ----
 
-something <- function(num){ # Recheck: Is there's anything worng with the declaration of this function? 
-  
-  if(num %% 3 ==0 & num %% 5 == 0){
+something <- function(num) { 
+# Recheck: Is there's anything worng with the declaration of this function?
+
+  if (num %% 3 == 0 && num %% 5 == 0) {
     return("FizzBuzz");
-  }
-  else if(num %% 3 == 0){
+  }else if (num %% 3 == 0) {
     return("Fizz");
-  }
-  else if(num %% 5 == 0){
-    return("Buzz")
-  }
-  else{
+  }else if (num %% 5 == 0) {
+    return("Buzz");
+  }else {
     return(num);
   }
 }
@@ -144,10 +135,10 @@ something(8)
 
 # WAP that returns the sum of digits of a number given as argument.
 
-digit_sum <- function(num){
+digit_sum <- function(num) {
   sum = 0;
-  while(num>0){
-    sum = sum + num%%10; # I don't want to forget this logic again.
+  while (num > 0) {
+    sum = sum + num %% 10; # I don't want to forget this logic again.
     num = num %/% 10;
   }
 }
@@ -163,10 +154,10 @@ digit_sum(121)
 
 is_prime_brute_force <- function(n){
   if(n <= 1){
-    return (" It's not a prime number OHK.");
+    return(" It's not a prime number OHK.");
   }
-  for(i in 2:(n-1)){  
-    if(n %% i == 0){ 
+  for (i in 2:(n - 1)) {
+    if (n %% i == 0) {
       return("It's not a prime number.");
     }
   }
@@ -186,13 +177,13 @@ is_prime_brute_force(16)
 
 # WAP to check if a number is a prime number or not: Optimized Brute Force.
 
-is_prime_optimized <- function(n){
-  
-  if(n<=1){
+is_prime_optimized <- function(n) {
+
+  if (n <= 1) {
     return("It's not  a prime number.");
   }
-  for(i in 2 : floor(sqrt(n))){
-    if(n %% i == 0){
+  for (i in 2 : floor(sqrt(n))) {
+    if (n %% i == 0) {
       return("Not a prime number.");
     }
   }
@@ -205,7 +196,7 @@ is_prime_optimized(127)
 is_prime_optimized(121)
 
 
-# Notes to myself: 
+# Notes to myself:
 # The similarities in C++ and R
-# Why is Data type declaration not required in R? What are it's pros and cons? 
+# Why is Data type declaration not required in R? What are it's pros and cons?
 # Catching errors: Non- Numeric argument to a binary operator.
